@@ -376,7 +376,7 @@ System.out.println(str);
 		Process p = Runtime.getRuntime().exec(command);
 		p.waitFor();
 		*/	
-		
+		System.out.println("in Utils::midi2wav()"+soundfont);
 		Midi2WavRender.render(soundfont, midifile, wavfile);	
 	}
 	//----------------------------------------------
@@ -1571,6 +1571,7 @@ System.out.println(str);
 	}
 	//----------------------------------------------
 	public static Soundbank[] getAllSoundbanks(String soundbank_file) throws Exception {
+		System.out.println("In getAllSoundbanks(): soundbank_file = "+soundbank_file);
 		String str = new File(soundbank_file).getName();
 		System.out.println(str);
 	String name = str.substring(0,str.lastIndexOf("."));
