@@ -148,8 +148,7 @@ $(document).ready(function(){
     url     : 'process.jsp',
     data    : $("#mainform").serialize(),
 	timeout : 0,
-    success : function(data, status) {
-		alert(status);
+    success : function(data, status) {		
 				$( "#file" ).html(type+' file is now ready, click'+data+' to listen');
 				$( "#loading" ).hide();          }	,
     complete: function() {
