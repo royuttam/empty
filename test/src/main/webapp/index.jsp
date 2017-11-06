@@ -248,11 +248,11 @@ response.setHeader("Pragma", "no-cache");
 response.setHeader("Cache-Control", "no-cache");
 response.setDateHeader("Expires", -1);
 
-String display="";
+String display="", ed="enabled";
 String user= request.getParameter("user");
 String passwd= request.getParameter("passwd");
 if(user != null && passwd != null && user.equals("root") && passwd.equals("ufibtum"));
-else display="none";
+else {display="none"; ed="disabled";}
 
 
 String root = request.getServletContext().getRealPath("/")+"/";
@@ -304,7 +304,7 @@ for(String key : dirs.keySet())												//for linux
 </select>	
 </td><td>Song:</td>
 <td><select id='song' name='song' ></select></td>
-<td>SoundFont:</td><td><select id="soundfont" name='soundfont' style="width: 160px">
+<td>SoundFont:</td><td><select id="soundfont" name='soundfont' style="width: 160px" <%=ed%>>
 <option value='ukr.SF2'>ukr.SF2</option>
 <option value='Musyng_KiteExt.sf2'>Musyng_KiteExt.sf2</option>
 <option value='FluidR3_GMExt.SF2'>FluidR3_GMExt.SF2</option>
@@ -319,7 +319,7 @@ out.println("<option value='"+i+"'>"+scales[i]+"</option>");
 </select>
 </td><td>Speed :</td><td><input type='text' id='bpmval' size='1'/> BPM
 <input type="range" id='bpm' name="bpm" min="1" max="1000" style='position: relative; top: 6px; color: blue;'/>song off<input type="checkbox" name="songonoff" />
-</td><td>Primary inst:</td><td><select id="preset1" name='preset1' style="width: 160px">
+</td><td>Primary inst:</td><td><select id="preset1" name='preset1' style="width: 160px" >
 <jsp:include page='getPresets.jsp'>
 <jsp:param name="soundfont" value="ukr.sf2"/>
 </jsp:include>
@@ -334,7 +334,7 @@ out.println("<option value='"+i+"'>"+scales[i]+"</option>");
 Taal:<select id="taals" name="taals"></select>
 Tabla off<input type="checkbox" name="tablaonoff" />
 
-</td><td>Secondary inst:</td><td><select id="preset2" name='preset2' style="width: 160px">
+</td><td>Secondary inst:</td><td><select id="preset2" name='preset2' style="width: 160px" >
 <jsp:include page='getPresets.jsp'>
 <jsp:param name="soundfont" value="ukr.sf2"/>
 </jsp:include>

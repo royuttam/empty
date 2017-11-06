@@ -5,6 +5,8 @@ import java.util.*;
 import java.io.*;
 import org.apache.commons.lang3.*;
 import org.w3c.dom.*;
+import javax.sound.midi.Soundbank;
+import javax.sound.midi.MidiSystem;
 class Info {
 	class Meta {
 		public int bpm, scale;
@@ -1566,6 +1568,41 @@ System.out.println(str);
 		Double[][] nmat = (Double[][])pair[0];
 		Utils.writemidi_java(nmat, "out.mid" ,300, bpm,3,4, inst.patch);
 		Utils.playMidi("out.mid", soundFontRoot+soundfont);
+	}
+	//----------------------------------------------
+	public static Soundbank[] getAllSoundbanks(String soundbank_file) throws Exception {
+		String str = new File(soundbank_file).getName();
+	String name = str.substring(0,str.lastIndexOf("."));
+	System.out.println(name);
+	  System.out.println(new File(soundbank_file).getParentFile().getAbsolutePath());
+	  
+	  
+	  File dir = new File(soundbank_file).getParentFile();
+      File[] paths = dir.listFiles(new java.io.FilenameFilter() {
+		public boolean accept(File dir, String str) {
+			System.out.println("lowercase = "+str.toLowerCase());
+			return str.toLowerCase().contains(name.toLowerCase());
+		}
+	  });
+	  
+	  System.out.println("No of. soundbanks found: "+paths.length);
+		
+		Soundbank[] soundbanks = new Soundbank[paths.length];
+	 for(int in=0;in<paths.length;in++)  {
+		 System.out.println(paths[in].getAbsolutePath()+" "+paths[in].length());
+		 soundbanks[in] = MidiSystem.getSoundbank(paths[in]);
+	
+/*
+         javax.sound.midi.Instrument[] instruments = soundbanks[in].getInstruments();
+		 System.out.println("no of instruments found: "+instruments.length);
+		 for(int i=0;i<instruments.length;i++) {
+			javax.sound.midi.Patch p = instruments[i].getPatch();
+			System.out.println(p.getBank()+" "+p.getProgram());
+		 }
+		 */
+	
+	 }
+		return soundbanks;
 	}
 }
 

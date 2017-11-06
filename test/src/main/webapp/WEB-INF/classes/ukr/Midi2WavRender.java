@@ -54,6 +54,7 @@ public class Midi2WavRender {
 	}
 	
 	public static void render(String soundbank_file, String midi_file,	String wavfile) throws Exception{		
+	/*
 	String str = new File(soundbank_file).getName();
 	String name = str.substring(0,str.lastIndexOf("."));
 	System.out.println(name);
@@ -74,42 +75,13 @@ public class Midi2WavRender {
 	 for(int in=0;in<paths.length;in++)  {
 		 System.out.println(paths[in].getAbsolutePath()+" "+paths[in].length());
 		 soundbanks[in] = MidiSystem.getSoundbank(paths[in]);
-	
-/*
-         javax.sound.midi.Instrument[] instruments = soundbanks[in].getInstruments();
-		 System.out.println("no of instruments found: "+instruments.length);
-		 for(int i=0;i<instruments.length;i++) {
-			javax.sound.midi.Patch p = instruments[i].getPatch();
-			System.out.println(p.getBank()+" "+p.getProgram());
-		 }
-		 */
-	
 	 }
-	 
-	 
-	 /*AudioSynthesizer synth =  findAudioSynthesizer();
-		AudioInputStream stream = synth.openStream(null, null);
-		Soundbank defsbk = synth.getDefaultSoundbank();
-				if (defsbk != null)
-					synth.unloadAllInstruments(defsbk);
-				
-				for(int i=0;i<soundbanks.length;i++) synth.loadAllInstruments(soundbanks[i]);				
-				System.out.println(synth.getLoadedInstruments().length);
-	 */
-	 
+
+*/ 
 	 Sequence sequence = MidiSystem.getSequence(new File(midi_file));
-	 /*
-	 javax.sound.midi.Patch[] patches = sequence.getPatchList();
-	 for(int i=0;i<patches.length;i++)
-		 System.out.println(patches[i].getBank());
-	 System.out.println("In Midi2WavRender, Patches list = "+patches.length);
-	 */
-	 
-	 
-	 
-	 
 	 File audio_file = new File(wavfile);
-	 render(soundbanks, sequence, audio_file);
+	 //render(soundbanks, sequence, audio_file);
+	 render(ukr.Utils.getAllSoundbanks(soundbank_file), sequence, audio_file);
 	 
 	}
 	/*
