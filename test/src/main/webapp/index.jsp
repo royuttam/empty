@@ -136,11 +136,29 @@ $(document).ready(function(){
 
 		$( "#file" ).html('Generating '+type+' file...');
 		$( "#loading" ).show();
+		/*
 		$.post('process.jsp', $("#mainform").serialize(),   function(data, status){
 			$( "#file" ).html(type+' file is now ready, click'+data+' to listen');
 			$( "#loading" ).hide();
 		});
+		*/
+		
+		$.ajax({
+    type    : "POST",
+    url     : 'process.jsp',
+    data    : $("#mainform").serialize(),
+	timeout : 0,
+    success : function(data, status) {
+		alert(status);
+				$( "#file" ).html(type+' file is now ready, click'+data+' to listen');
+				$( "#loading" ).hide();          }	,
+    complete: function() {
+    
+	}
+});
+		
 
+		
 
 	});
 	
