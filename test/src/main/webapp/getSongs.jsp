@@ -27,6 +27,7 @@ for(int in=0;in<paths.length;in++) {
         String f3 = java.net.URLEncoder.encode(file, "UTF-8");
     out.println("<option value='"+f3+"'>"+map.get(file)[1]+"</option>");    //for linux
     //out.println("<option value='"+f3+"'>"+file+"</option>");    	   		//for windows
+	//}
     }
 }
 

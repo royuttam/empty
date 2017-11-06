@@ -69,12 +69,23 @@ public class Midi2WavRender {
 	  });
 	  
 	  System.out.println("No of. soundbanks found: "+paths.length);
+	 
 	 Soundbank[] soundbanks = new Soundbank[paths.length];
 	 for(int in=0;in<paths.length;in++)  {
 		 System.out.println(paths[in].getAbsolutePath()+" "+paths[in].length());
 		 soundbanks[in] = MidiSystem.getSoundbank(paths[in]);
-		 
+	
+/*
+         javax.sound.midi.Instrument[] instruments = soundbanks[in].getInstruments();
+		 System.out.println("no of instruments found: "+instruments.length);
+		 for(int i=0;i<instruments.length;i++) {
+			javax.sound.midi.Patch p = instruments[i].getPatch();
+			System.out.println(p.getBank()+" "+p.getProgram());
+		 }
+		 */
+	
 	 }
+	 
 	 
 	 /*AudioSynthesizer synth =  findAudioSynthesizer();
 		AudioInputStream stream = synth.openStream(null, null);
@@ -87,6 +98,16 @@ public class Midi2WavRender {
 	 */
 	 
 	 Sequence sequence = MidiSystem.getSequence(new File(midi_file));
+	 /*
+	 javax.sound.midi.Patch[] patches = sequence.getPatchList();
+	 for(int i=0;i<patches.length;i++)
+		 System.out.println(patches[i].getBank());
+	 System.out.println("In Midi2WavRender, Patches list = "+patches.length);
+	 */
+	 
+	 
+	 
+	 
 	 File audio_file = new File(wavfile);
 	 render(soundbanks, sequence, audio_file);
 	 
@@ -125,7 +146,12 @@ public class Midi2WavRender {
 					synth.unloadAllInstruments(defsbk);
 				//synth.loadAllInstruments(soundbank);
 				
-				for(int i=0;i<soundbanks.length;i++) synth.loadAllInstruments(soundbanks[i]);				
+				
+				for(int i=0;i<soundbanks.length;i++) {
+					System.out.print("Loading Instruments from soundbank "+soundbanks[i].getName()+"...");
+					synth.loadAllInstruments(soundbanks[i]);				
+				    System.out.println("Done.");
+				}
 			}
 			
 			// Play Sequence into AudioSynthesizer Receiver.
