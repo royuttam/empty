@@ -382,6 +382,7 @@ System.out.println(str);
 	//----------------------------------------------
 	static void wav2mp3(String wavfile, String mp3file) throws Exception {
 		//jump3r-1.0.3.jar is needed
+		/*
 		String[] mp3Args = {"--preset","standard",
             "-q","0",
             "-m","s",
@@ -389,9 +390,10 @@ System.out.println(str);
             mp3file};
 		mp3.Main m = new mp3.Main();
         m.run(mp3Args);		
+		*/
 		
-		/*
 		//jave-1.0.2.jar is needed
+		
 		File source = new File(wavfile);
 		File target = new File(mp3file);
 		AudioAttributes audio = new AudioAttributes();
@@ -404,7 +406,7 @@ System.out.println(str);
 		attrs.setAudioAttributes(audio);
 		Encoder encoder = new Encoder();
 		encoder.encode(source, target, attrs);
-		*/
+		
 	}
 	//----------------------------------------------
 	static void playMidi(String midifile,String soundfont) throws Exception  {
@@ -1577,7 +1579,7 @@ System.out.println(str);
 		//System.out.println(str);
 	String name = str.substring(0,str.lastIndexOf("."));
 	//System.out.println(name);
-	  System.out.println(new File(soundbank_file).getParentFile().getAbsolutePath());
+	  System.out.println("In Utils:getAllSoundbanks(): soundbank directory: "+new File(soundbank_file).getParentFile().getAbsolutePath());
 	  
 	  
 	  File dir = new File(soundbank_file).getParentFile();
