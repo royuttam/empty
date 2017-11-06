@@ -22,12 +22,12 @@ String dir=prop.getProperty("songRoot")+request.getParameter("dir");
 File[] paths = new File(dir).listFiles();
 for(int in=0;in<paths.length;in++) {
      if (paths[in].isFile()) {
-    //if (paths[in].isFile() && paths[in].length() > 16000) {
+    if (paths[in].isFile() && paths[in].length() > 16000) {
         String file=paths[in].getName().toString();
         String f3 = java.net.URLEncoder.encode(file, "UTF-8");
     out.println("<option value='"+f3+"'>"+map.get(file)[1]+"</option>");    //for linux
     //out.println("<option value='"+f3+"'>"+file+"</option>");    	   		//for windows
-	//}
+	}
     }
 }
 

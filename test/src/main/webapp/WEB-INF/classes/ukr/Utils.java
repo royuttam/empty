@@ -376,7 +376,7 @@ System.out.println(str);
 		Process p = Runtime.getRuntime().exec(command);
 		p.waitFor();
 		*/	
-		System.out.println("in Utils::midi2wav()"+soundfont);
+		//System.out.println("in Utils::midi2wav()"+soundfont);
 		Midi2WavRender.render(soundfont, midifile, wavfile);	
 	}
 	//----------------------------------------------
@@ -699,13 +699,14 @@ System.out.println(str);
 		mi.nmat=attenuate(mi.nmat);
 		String midifile=Utils.webRoot +"midi/"+ fl +".mid";
 		writemidi_java(mi.nmat, midifile ,300, song.meta.bpm,3,4, mi.patch);
+		/*
 		System.out.println("in song2midi()");
 		for(int row=0;row<mi.patch.length;row++) {
 			for(int col=0;col<mi.patch[row].length;col++)
 				System.out.print(mi.patch[row][col]+" ");
 			System.out.println();
 		}
-			
+			*/
 		
 		return midifile;
 	}
@@ -1571,18 +1572,18 @@ System.out.println(str);
 	}
 	//----------------------------------------------
 	public static Soundbank[] getAllSoundbanks(String soundbank_file) throws Exception {
-		System.out.println("In getAllSoundbanks(): soundbank_file = "+soundbank_file);
+		//System.out.println("In getAllSoundbanks(): soundbank_file = "+soundbank_file);
 		String str = new File(soundbank_file).getName();
-		System.out.println(str);
+		//System.out.println(str);
 	String name = str.substring(0,str.lastIndexOf("."));
-	System.out.println(name);
+	//System.out.println(name);
 	  System.out.println(new File(soundbank_file).getParentFile().getAbsolutePath());
 	  
 	  
 	  File dir = new File(soundbank_file).getParentFile();
       File[] paths = dir.listFiles(new java.io.FilenameFilter() {
 		public boolean accept(File dir, String str) {
-			System.out.println("lowercase = "+str.toLowerCase());
+			//System.out.println("lowercase = "+str.toLowerCase());
 			return str.toLowerCase().contains(name.toLowerCase());
 		}
 	  });
