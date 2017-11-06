@@ -1572,6 +1572,7 @@ System.out.println(str);
 	//----------------------------------------------
 	public static Soundbank[] getAllSoundbanks(String soundbank_file) throws Exception {
 		String str = new File(soundbank_file).getName();
+		System.out.println(str);
 	String name = str.substring(0,str.lastIndexOf("."));
 	System.out.println(name);
 	  System.out.println(new File(soundbank_file).getParentFile().getAbsolutePath());
