@@ -304,7 +304,7 @@ for(String key : dirs.keySet())												//for linux
 </select>	
 </td><td>Song:</td>
 <td><select id='song' name='song' ></select></td>
-<td>SoundFont:</td><td><select id="soundfont" name='soundfont' style="width: 160px" <%=ed%>>
+<td>SoundFont:</td><td><select id="soundfont" name='soundfont' style="width: 160px" >
 <option value='ukr.SF2'>ukr.SF2</option>
 <option value='Musyng_KiteExt.sf2'>Musyng_KiteExt.sf2</option>
 <option value='FluidR3_GMExt.SF2'>FluidR3_GMExt.SF2</option>
