@@ -1,0 +1,74 @@
+
+
+
+test|1=|"ge - te -" "na ke" "- ke"  tin+ge | "tu - - te" "na ke" "- ke" ti+ge
+#
+test|2=|ke+ge "te ti" te "na+te ti" | "na+te ti" "te ti" tin+ge "na+ge na"
+#
+test|3=|ge_-6 "te ti" te "na+te ti" | "na+te ke" "te ti" tin+sliding-ge_4 "na+ge na"
+#
+
+
+
+
+33v10|sthayi=|ge_2 ge_2 ge_7 | ge_6 "ge_4 ge_2" -| ge_1 - ge_-1 | ge_1 ge_2 "ge_1 ge_6"| ge_4 ge_2 - | - - -
+#33v10|repeat=$33v10|sthayi
+#33v10|last=$33v10|sthayi
+#33v10|antara=$33v10|sthayi
+#
+33v7|sthayi=|na+sliding-ge.2  "te ti"  "na na" |"te ti" "sliding-ge ge_-3"  na.3|,
+            |"na+sliding-ge.2 - - ti"  "te ti"  "na na" |"te ti" "sliding-ge ge_-3"  "na na"|,
+            |"na+sliding-ge.2 - - ti"  "te ti"  "na na" |"sliding-ge ge_-3" "te ti ke te"  "na na"|,
+            |na+sliding-ge.2  "te ti"  "na na" |"te ti" "sliding-ge ge_-3"  "na na"|
+#
+
+33v7|repeat=|na+ge.2_-3 "sliding-ge.2 na" "te ti ke te"|"na ke" "sliding-ge_3 na" ge.2,
+            |na+ge.2_-3  "te na"   "te	ti"	 |"na	ke te	ti"	 "ke	te na	ke"	 "te	ti ke	te"
+#
+
+33v7|antara=|sliding-ge+ti  te "te ke"| "na ke"  ge_-2 ge_-3|,
+            |sliding-ge+ti  te "te ke"| "na na"  ge_-2 ge_-3|,
+            |sliding-ge+ti  te "te ke"| "na ke"  ge_-2 ge_-3|
+#
+
+33v7|last=  |na+ge.3_-3 "sliding-ge.2 na" "te ti ke te"|"na ke" "sliding-ge_5 na" tu,
+            |"na ke" "na na" "te ti ke te"|"na ke" "sliding-ge_5 na" "ge.2 - na na",
+            |na+ge.3_-3 "sliding-ge.2 na" "te ti ke te"|"na ke" "sliding-ge_5 na" tu,
+            |"na ke" "na na" "te ti ke te"|"na ke" "sliding-ge_5 na" "ge.2 - na na",
+            |na+ge.2_-3 "sliding-ge.2 na" tu|"na ke" "sliding-ge na" "ge.2 - na na"
+#
+
+33v9|sthayi=|sliding-ge.4  "te  ti"  "na na" |"te ti" "sliding-ge ge.4_-3"  na.3|,
+            |"sliding-ge.2 - - te"  "te - - - - ti - - -"  "na na" |"te ti" "sliding-ge ge_-3"  na.3|,
+            |sliding-ge.4  "te  ti"  "na na" |"te ti" "sliding-ge ge.4_-3"  na.3|
+#
+         
+33v9|repeat=|na+ge.4_-3 "sliding-ge na" "te ti ke ti"|"na ke" "sliding-ge_3 na" ge.2,
+            //--------Mukhra--------,
+            |na+ge.4_-3  "te na"   "te	ti"	 |"na	ke te	ti"	 "ke	te na	ke"	 "te	ti ke	te"
+#
+33v9|last=$33v9|repeat
+#
+33v9|antara=$33v9|sthayi
+
+#
+3333v1|sthayi=|na+sliding-ge.3 ge.3_-4 "na ke"| "te ti" ge_-4 "na na",
+              |ge_-3 sliding-ge "na na"| "te ti te ti" tu "na na"|,
+              |na+sliding-ge.3 ge.3_-4 "na ke"| "te+ge_-4 ti+sliding-ge" "na+ge_-4 sliding-ge" "ge_-4 sliding-ge", 
+             //|"te+ge_-4 ti+sliding-ge" "na+ge_-4 sliding-ge" "ge_-4 sliding-ge"| "te ti" tu "na na"|, 
+            //|ge_-3 sliding-ge "na na"| "te ti" ge_-4 na,
+            //|ge_-4 sliding-ge "na ke"| "te+sliding-ge ti+ge" tu+sliding-ge na+ge|,
+              |"te+ge_-4 - - - ti+sliding-ge" "na+ge_-4 sliding-ge" "ge_-4 sliding-ge"| "te ti" tu "na na"|, 
+              |ge_-4 sliding-ge "na ke"| "te ti" tu na|
+#
+3333v1|repeat=|ge.2_-3 "sliding-ge na" "te ti"|"na ke" "sliding-ge na" ge,
+            //--------Mukhra--------,
+            |sliding-ge  "te na"   "te	ti"	 |"na	ke te	ti"	 "ke	te na	ke"	 "te	ti ke	te"
+#
+3333v1|antara=$3333v1|sthayi
+#
+3333v1|last=$3333v1|repeat
+#
+
+
+

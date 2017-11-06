@@ -1,0 +1,12 @@
+33v7|sthayi=|sliding-ge.4  "te  ti"  "na na" |"te ti" "sliding-ge ge.4_-3"  na.3|,
+            |"sliding-ge.2 - - te"  "te - - - - ti - - -"  "na na" |"te ti" "sliding-ge ge_-3"  na.3|,
+            |sliding-ge.4  "te  ti"  "na na" |"te ti" "sliding-ge ge.4_-3"  na.3|
+#
+         
+33v7|repeat=|na+ge.4_-3 "sliding-ge na" "te ti ke ti"|"na ke" "sliding-ge_3 na" ge.2,
+            //--------Mukhra--------,
+            |na+ge.4_-3  "te na"   "te	ti"	 |"na	ke te	ti"	 "ke	te na	ke"	 "te	ti ke	te"
+#
+33v7|last=$33v7|repeat
+#
+33v7|antara=$33v7|sthayi

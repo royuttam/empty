@@ -1,0 +1,109 @@
+
+
+
+33v7|sthayi=    |gin.2  "te ra"  "ta ta" |"te ra" "gin_5 gha_-3"  ta|,
+                |gin.2  "te ra"  "ta ta" |"te ra" "ta+gin ta"  "ta+gha_-3 ta"|,                
+                |gin.2  "te ra"  "ta ta" |"te ra" "gin gha_-3"  "ta ta"|,                
+                |gin.2  "te ra"  "ta ta" |"te ra" "gha_-3 gin"  ta|,                
+                |gin.2  "te ra"  "ta ta" |"gin_5 gha_-3" "gin_5 gha_-3"  "ta ta"|,
+                |gin.2  "te ra"  "ta ta" |"te ra" "gin+ta gha_-3"  "gin+ta gha_-3"|,
+                |gin.2  "te ra"  "ta ta" |"te ra" "gin gha_-3"  ta|                
+#
+33v7|repeat=    |gha.2_-3  "te+gin ra"  "ta+gin_5 ta" |"te ra" "gin_5 gha_-3"  ta+gha|,
+                |dhin "ta dhin" "ta ta"  |"dhin ta" "ta dhin" "ta ta"|
+#
+33v7|last=|dha "gin.2 ta" "te ra ka te"|"ta ka" "gin ta" gha.2
+#
+33v7|antara=$33v7|sthayi
+#
+33v9|sthayi=    |dhin gha.2_-3 "ta ra"| "te ra" gha_-3 "ta ta",
+                |gha_-3 gin_5 "ta ta"| "te ra" ti "ta ta"|,
+                |dhin gha.2_-3 "ta ta"| "te ra" gha_-3 ta,
+                |gha_-3 gin_5 "ta ra"| "te ra" ti ta|,
+                |gha_-3 gin "ta ra"| "te ra" ti ta|
+#
+33v9|repeat=|gha "gin.2 ta" "te ra"|"ta ka" "gin ta" gha.2
+#
+33v9|last=$33v9|repeat
+#
+33v9|antara=$33v9|sthayi
+#
+322|sthayi=     |gin gha  ta| gin "ta ta"| gin "ta ta",
+                |gin   gha  ta| gin "ta ta"| "gin gin" "ta ta",
+                |gin   gha  "ta ta"| gin "ta ta"| gin "ta ta",
+                |gin   gha  ta| gin ta| "dha ta" "ta ta",
+                |gin   gha  ta| gin "ta ta"| "gin gin" "ta ta",
+                |gin   gha  "ta ta"| gin ta| gin "ta ta"
+#
+322|repeat=|gha   "gin gin"  "ta ta"| gin "ta ta"| gin "ta ta"
+#
+322|last=       |gha   "gin gin"  "ta ta"| gin "ta ta"| gin "ta ta",
+                |gha   "gin gin"  "ta ta"| gin "ta ta"| "dha ta" "ta ta"
+#
+322|antara=$322|sthayi
+
+#
+44v1|sthayi=    |gin dha "ta ta" "ka te" | ta "ti ra" "ta ta" gha|
+#
+44v1|antara=$44v1|sthayi
+#
+44v1|repeat=$44v1|sthayi
+#
+44v1|last=$44v1|sthayi
+#
+
+44v7|sthayi=    |gin.2 "- gha" te "ta ta" | - "dhin gin" gin.2 "ta ta"|,
+                |gin.2 "- gha" te "ta ta" | - "dhin gha" "gin gha" ta.2|,
+                |gin.2 "- gha" te "ta ta" | - "dhin gha" "ta ta" "ta ta"|,
+                |gin.2 "- gha" te "ta ta" | - "gin gha" "ta ta" "ta ta"|,
+                |gin.2 "- gha" te "ta ta" | "dhin gha" "gin gha" "gin gha" "ta ta"|,
+                |gin.2 "- gha" te "ta ta" | "dhin gha" "gin gha" "gin gha" "ta ta"|,
+                |gin.2 "- gha" te "ta ta" | "ta ta" gin gin.2 "ta ta"|,
+                |gin.2 "- gha" te ta | "ta te" "ta te" gin.2 ta.2|
+#
+44v7|repeat=|gin.2 "ta ta" te ta | "gin gin" "ta ta" gin.2 "ta ta"|
+#
+44v7|last=|gin.2 "ta ta" te ta | "gin gin" "ta ta" gin.2 "ta ta"|
+#
+44v7|antara=$44v7|sthayi
+#
+
+4444|sthayi=    |dha - ti ta |ta "ra ti" "ra ti" ta |ka "ti ka" "ta gha" dha| dhin dha dhin dha,
+                |dha "ti ra" "ka ti" ta| ta "ti ra" "ka ti" ta| ka "ti ra" "ka ti" dha| dhin dha dhin dha,
+                |dhin - ti "ti ta ti"| ti ti ta -| ka "- ka" ti dha|gha dha gha dha,
+                |dhin - ta "ti ta ti" |te te ta -| ka "- ka" ti dha |gha dha gha dha,
+                |gha - ti ta |"ra ti" "ra ti" "ra ti" ta|"ka ti" "ta ka" "ti gha" dha| dhin dha dhin dha,
+                |dha "- gin" ti ta| ta "ra ti" "ra ti" ta| ka "- ka" "ti gha" dha|dhin dha dhin dha
+#
+4444|repeat=|dha dhin dhin dha| dha dhin dhin dha |dha ti ti ta|ta dhin dhin dha
+#
+4444|last=  |gin.2 "ta ta" te ta | "gin gin" "ta ta" gin.2 "ta ta"|gin.2 "ta ta" te ta | "gin gin" "ta ta" gin.2 "ta ta"|
+#
+4444|antara=$4444|sthayi
+#
+
+3333|sthayi=    |gin.2  "ra ti"  "ta ta" |"te ra" "gin_5 gha_-3"  "ta ta"|,
+                |"gin.2 - - te"  "ra ti"  "ta ta" |"te ra" "gin_5 gha_-3"  ta|,
+                |"gin.2 - - ti"  "ra ti"  "ta ta" |"te ra" "gin_5 gha_-3"  "ta ta"|
+#
+3333|repeat=    |"dhin ta" "da ti" "dha da"|"ti ta" "da ti" "ta da"|,
+                |"ti ta" "da ti" "ta da"|"dhin dhin" "dha dhin" "dhin dha"|,
+                |dhin "ta dhin" "ta ta"  |"dhin ta" "ta dhin" "ta ta"|
+#
+3333|last=      |dha.2_-3 "gin.2_3 ta" "te ra ka te"|"ta ka" "gin_5 ta" "gha.2 - ta ta" |ta "ta ta" "te ra ka te"|"ta ka" "gin_5 ta" "gha.2 - ta ta"
+#
+3333|antara=$3333|sthayi
+#
+
+3333v1|sthayi=  |gin.2_-3  "te+gin ra+gha"  "ta ta" |"te ra" "gin gha"  ta | ka "ka te" "ta ta"|"ti ra"  "te ra"  "ta ta",
+                |gin.2_-3  "te+gin ra+gha"  ta |"te ra - - te" "gin gha"  "ta ta" | ka "ka te" "ta ta"|"ti ra - - te"  "te ra"  "ta ta",
+                |gin.2_-3  "te+gin ra+gha"  "ta ta" |"te ra" "gin gha"  ta | ka "ka te" "ta ta"|"ti ra"  "te ra"  "ta ta"
+#
+3333v1|repeat=  |"dhin ta" "da ti" "dha da"|"ti ta" "da ti" "ta da"|"ti ta" "da ti" "ta da"|"dhin dhin" "dha dhin" "dhin dha"|
+#
+3333v1|last=    |gin.2  "te ra"  "ta ta" |"dhin ta" "da ti" "dha da"|gin.2  "te ra"  "ta ta" |"dhin ta" "da ti" "dha da"
+#
+3333v1|antara=$3333v1|sthayi
+
+
+

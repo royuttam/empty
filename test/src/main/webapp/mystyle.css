@@ -1,0 +1,62 @@
+#transcript, #transcript2, #transcript3 {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+table {
+align: center;
+}
+#group2{
+  text-align: center;
+  align: center;
+  display: none;
+}
+#group3{
+  text-align: center;
+  align: center;
+  display: none;
+}
+
+#group {
+  text-align: center;
+  align: center;  
+}
+
+
+ #transcript2 table td {
+    border: 1px solid #dde;
+ }
+ #transcript2 table, #transcript table {
+    border-collapse: collapse;
+ }
+
+#transcript2 span, #transcript span {
+  -webkit-user-modify: read-write;
+    -moz-user-modify: read-write;
+   -ms-user-modify: read-write-plaintext-only;
+    user-modify: read-write;
+}
+
+#transcript2, #transcript, #transcript3 {
+  height: 350px;
+  width: 900px;
+  overflow: auto;
+  border: 1px solid #666;
+  background-color: #eFc;
+  padding: 8px;  
+}
+
+//#transcript2 tr:nth-child(4n+3) {background: #eea}
+//#transcript tr:nth-child(4n+2) {background: #eeb}
+
+//#transcript span.style1 div {background: #E6F5DB;}
+#transcript2 span.style1 div {background: #eeb;}
+
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+.selected {
+    //background-color:yellow;
+}
+

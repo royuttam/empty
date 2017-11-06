@@ -1,0 +1,212 @@
+
+
+
+test|1=|"ghe - te -" "na ke" "- ke" dhin | "tun - - te" "na ke" "- ke" dhin 
+#
+test|2=|ke+ge "tre re" tre "na+te re" | "na+tre ke" "tre re" tin+ghee_3 "dha na"
+#
+test|3=|ge_-5 "tre re" tre "na+te re" | "na+tre ke" "tre re" tin+ghee_6 "dha na"
+#
+
+
+23|sthayi=|ghee na |ge_-3 "ghee_2 ge_-3" "na na"|,
+          |"ghee - - tre" na |ge_-3 "ghee ge_-3" "na na"|,
+          |ghee "na na" |"ghee_2 ge_-3" ghee na|
+#
+23|repeat=|"ghee - tre tre" "na na" |"ghe_2 ge_-3" "ghee ge_-3" "na na"|
+#
+23|last=$23|repeat
+#
+23|antara=$23|sthayi
+#        
+2323|sthayi=$23|sthayi
+#        
+2323|sthayi=$23|sthayi
+#
+2323|repeat=$23|repeat
+#
+2323|last=$23|last
+#
+2323|antara=$23|antara
+#
+22|sthayi=|ghee "na na" |"- ke" "tun na",
+          |- "na na" |"- ke" "dha na"|,
+          |- "na na" |"- ke" "dha na"|
+#
+22|repeat=|ghee "na na" |"- ke" "na na"|,
+        |ghee "na na" |"- ke" "te re ke te"|
+#
+22|last=|dha.2_-3 "- ghee_3" na "te re ke te",
+        | na "- ghee.2_5" na tun,
+        |dha.2_-3 "- ghee_3" na "te re"
+#
+22|antara=$22|sthayi
+#        
+32|sthayi=|ge ghee "na na"|ghee "na na"|
+#
+32|repeat=|ge "ghee ghe" "na na"|"ghee ghe" "na na"|,
+            //----------mukhra--------,
+            |"na na" "te	te" "na ke te re"|"ke te na ke" "te re ke te"
+#
+32|last=$32|repeat
+#
+32|antara=$32|sthayi
+
+        
+
+
+#
+
+322|sthayi= |ghee_4   "tre re"  "na na"| "ghee ge_-2" "na na"| "ghee ge_-2" "na na",
+            |"ghee_4 - -tre"   "tre re"  "na na ke na"| "ghee ge_-2" "na na"| "ghee ge_-2" "na na",
+            |ghee_4   "tre re"  na| ghee "na na"| ghee "na na"
+#
+322|repeat=|ghee_4   "tre re"  "na na"| "ghee ge_-2" "na na ke na"| "ghee ge_-2" "na na ke na",
+            //----------mukhra--------,
+           |ghee "tre re" "na na"|"te	te" "na ke te re"|"ke te na ke" "te re ke te"
+#
+322|last=$322|repeat
+#
+322|antara=$322|sthayi
+
+#
+322v1|sthayi=|ghee_4   "tre re"  "na na"| "ghee ge_-2+tre" "na na"| "ghee ge_-2" "na na",
+             |"ghee_4 tre"   "tre re"  "na na"| "ghee ge_-2" "na na"| "ghee ge_-2" "na na",
+             |ghee_4   "tre re"  na| ghee "na na"| ghee "na na"
+#
+322v1|repeat=|ghee_4   "tre re"  "na na ke na"| "ghee ge_-2" "na na"| "ghee ge_-2" "na na",
+            //----------mukhra--------,
+            |ghee "tre re" "na na"|"te	te" "na ke te re"|"ke te na ke" "te re ke te"
+#
+322v1|last=$322v1|repeat
+#
+322v1|antara=$322v1|sthayi
+
+
+
+#
+
+
+33v7|sthayi=|ghee.2  "tre re"  "na na" |"tre re" "ghee ge_-3"  na.3|,
+            |"ghee.2 - - tre"  "tre re"  "na na" |"tre re" "ghee ge_-3"  "na na"|,            |"ghee.2 - - tre"  "tre re"  "na na" |"ghee ge_-3" "te re ke te"  "na na"|,
+            |ghee.2  "tre re"  "na na" |"tre re" "ghee ge_-3"  "na na"|
+#
+33v7|repeat=|dha.2_-3 "ghee.2 na" "te re ke te"|"na ke" "ghee_3 na" ge.2,
+            |dha.2_-3  "tre na"   "te	te"	 |"na	ke te	re"	 "ke	te na	ke"	 "te	re ke	te"
+#
+33v7|antara=|ghee+re  tre "tre ke"| "na ke"  ge_-2 ge_-3|,
+            |ghee+re  tre "tre ke"| "na na"  ge_-2 ge_-3|,
+            |ghee+re  tre "tre ke"| "na ke"  ge_-2 ge_-3|
+#
+33v7|last=  |dha.3_-5 "ghee.2 na" "te re ke te"|"na ke" "ghee_5 na" tun,
+            |"na ke" "na na" "te re ke te"|"na ke" "ghee_5 na" "ge.2 - na na",
+            |dha.3_-5 "ghee.2 na" "te re ke te"|"na ke" "ghee_5 na" tun,
+            |"na ke" "na na" "te re ke te"|"na ke" "ghee_5 na" "ge.2 - na na",
+            |dha.2_-5 "ghee.2 na" tun|"na ke" "ghee na" "ge.2 - na na"
+#
+33v8|sthayi=|dhaaa  tre "tre ke"| "na ke"  ge.2_-3 ge.2_-3|
+#
+33v8|repeat=|ghee_3  "tre re"  "na na" |"tre re" "ghee ge.2_-4"  "na na ke na"|,
+            //--------Mukhra--------,
+            |ghee  "tre na"   "te	te"	 |"na	ke te	re"	 "ke	te na	ke"	 "te	re ke	te"
+#
+33v8|last=  |dha.2_-3 "ghee.2 na" tun|"na ke" "ghee_5 na" "ge.2 - na na",
+            |dha.2_-3 "ghee.2 na" "tun - na na"|"na ke" "ghee_5 na" ge.2,
+            |dha.2_-3 "ghee.2 na" "te re ke te"|"na ke" "ghee_5 na" "ge.2 - na na",
+            |dha.2_-3 "ghee.2 na" "tun - na na"|"na ke" "ghee_5 na" ge.2
+#
+33v8|antara=|"dha_-2 - - tre"  "te re+ghee_5" "na ke"|"na na"  ghee.2_5 ge.2_-3|,
+            |dha_-2  "te re" "na ke"|"na na ke na"  "tre ke" ge.2_-3|,
+            |dha_-2    "te ghee_5" "na ke"|"na na"  ghee.2_3 ge.2_-3|,
+            |dha_-2  "te re" "na ke"|"na na ke na"  "tre ke" ge.2_-3| ,
+            |dha_-2 "te ghee_5" "na ke"|"na na ke na"  ge.2_-3 ge.2_-3|
+#
+33v9|sthayi=|dhaaa ge_-3 "na re"| "tre te" ge "na na",
+            |ge_-3 ghee_5 "na na"| "tre te" tun "na na"|,
+            |dhaaa ge_-3 "na na"| "tre te" ge na,
+            |ge_-3 ghee_5 "na re"| "tre te" tun na|,
+            |dhaaa ge_-3 "na re"| "tre te" ge "na na"|
+#
+33v9|repeat=|ge.2_-4 "ghee na" "tre re"|"na ke" "ghee_5 na" ge,
+            //--------Mukhra--------,
+            |ghee  "tre na"   "te	te"	 |"na	ke te	re"	 "ke	te na	ke"	 "te	re ke	te"
+#
+33v9|antara=$33v9|sthayi
+#
+33v9|last=$33v9|repeat
+#
+3333|sthayi=|ghee_5+re  tre "tre ke"| "na ke"  ge.2_-3 ge.2_-3|,
+            |"na.2+re na" tre "tre ke"| "na na"  ghee ge.2_-3|,
+            |dhaaa  tre "tre ke"| "na na ke na"  ghee ge|
+#
+3333|repeat=|"ghe ge"  na "te re ke te"| "na ke"  ge "na na"|"ghe ge"  na "te re"| "te re ke te"  ge "na na"|
+#
+3333|last=$3333|repeat
+#
+3333|antara=|"dha_-2 - - tre"  "te re" "na ke"| "na ke"  ge_-3 "na na"| "na.2 - - tre"  "na na" "te re"| "na ke"  "ghee_3 ge_-3" "na na"|
+#
+3333v1|sthayi=|dha.2_-3  "tre re"  "na na" |"tre re" "ghee ghe"  "na na"|ghee.2_-3  "tre re"  "na na" |"tre re" tun  "na na"|,
+            |dha.2_-3  "tre re"  "na na" |"tre re" "ghee ghe"  "na na"|ghee.2_-3  "tre re"  "na na" |"tre re" tun  "na na"|,
+            |dha.2_-3  "tre re"  "na na" |"ghee ge" "ghee ge"  "na na"|ghee.2_-3  "tre re"  "na na" |"ghee ge" tun  "na na"|
+#        
+3333v1|repeat=|dha_-3 "ghee.2 na" "te re ke te"|"na ke" "ghee_5 na" ge.2,
+            |dha_-3 "ghee.2 na" tun|"na ke" "ghee_5 na" ge.2,
+            |dha_-3 "ghee.2 na" "te re ke te"|"na ke" "ghee_5 na" ge.2,
+            //---attempted for tihai,
+            |"dha_-3" "te re ke te" "dha_-3 -" "te re ke te" "dha_-3 -" "te re ke te" 
+#
+3333v1|last=|dha_-3 "ghee.2 na" "te re ke te"|"na ke" "ghee_5 na" ge.2
+#
+3333v1|antara=$3333v1|sthayi
+#
+4444|sthayi=|"na.-1+ge.2_-3 - tre.-6" tin.-5+ge.-2 tin.-5+ge.-2 na.-1+ge_-3| na.-3+ge.2_-3 tin.-5+ge.-2 tin.-5+ge.-2 na.-2+ge_-3|na tin.-3 tin.-3 "na tre.-1" |"te.-1 re.-1" dhin.-2 tin.-3+ghee.-1_2 dha
+#
+4444|repeat=|na.-1+ge.2_-3 "na na" tin.-5+ghe.-1_-1 na.-1+ge_-3|na.-1+ge_-3 tin.-5+ghe.-1_-1 tin.-5+ghe.-1_-1 na.-1+ge_-3|"na na" tin tin "na tre" |"te re" dhe dhe dha,
+            |na.-1+ge.2_-3 tin.-5+ghe.-1_-1 tin.-5+ghe.-1_-1 na.-1+ge_-3|na.-1+ge_-3 tin.-5+ghe.-1_-1 tin.-5+ghe.-1_-1 na.-1+ge_-3|"na na" tin tin "na tre" |"te	te"	"na	ke te	re"	"ke	te na	ke"	"te	re ke	te"|
+#
+4444|last=|na.-1+ge.2_-3 "na na" tin.-5+ghe.-1_-1 na.-1+ge_-3|na.-1+ge_-3 tin.-5+ghe.-1_-1 tin.-5+ghe.-1_-1 na.-1+ge_-3|"na na" tin tin "na tre" |"te re" dhe dhe na.-1+ge_-3#
+4444|antara=$4444|sthayi
+
+#
+44v6|sthayi=|"dha.2_-3 na" "tre re" tre "na re" | "na+tre ke" "tre re" tin+ghee_3 "dha na" ,
+            |dha.2_-3 "tre re" tre "na re" | "na+te ke" "tre re" tin+ghee_3 dha ,
+            |dha.2_-3 "tre re" tre na | "na+tre ke" "tre re" tin+ghee_3 dha 
+#
+44v6|repeat=|ghee.2 "na na" te na.2 | "ghee ghee" "na na" ghee.2 "na na"|,
+            //------------mukhra----------,
+            |ghee.2 "na na" te na.2 | "te	te"	"na	ke te	re"	"ke	te na	ke"	"te	re ke	te"
+#
+44v6|last=$44v6|repeat
+#44v6|antara=|dha.2_-3 "- ghee_3" na "te re"| na "- ghee.2_5" na tun#
+44v7|sthayi=|ge.3_-3 "- ghee_3" tre "na na" | - "ghee_3 ge_-3" ghee.2 na.2|,
+            |ge.3_-3 "- ghee_3" tre "na na" | - "ghee_3 ge_-3" "ghee_3 ge_-3" na.2|,
+            |ge.3_-3 "- ghee_3" tre "na na" | "ghee_3 ge_-3" "ghee_3 ge_-3" "ghee_3 ge_-3" na.2|,
+            |ge.3_-3 "- ghee_3" tre "na na" | "tre na" ghee_3 ghee_3 na.2|,
+            |ge.3_-3 "- ghee_3" tre "na na" | "tre na" ghee_3 ghee_3 na.2|
+#
+44v7|repeat=|ghee.2 "na na" te na.2 | "ghee ghee" "na na" ghee.2 "na na",
+            //------------mukhra----------,
+            |ghee.2 "na na" te na.2 | "te	te"	"na	ke te	re"	"ke	te na	ke"	"te	re ke	te"
+#
+44v7|last=|ghee.2 "na na" te na.2 | "ghee ghee" "na na" ghee.2 "na na"
+#
+44v7|antara= $44v7|sthayi
+
+#
+44v8|sthayi=|ghee.2 dha.2_-3 "na na" "ke tre" | na "tun ke" "na na" ge_-1|
+#            
+44v8|repeat= |ghee.2 "na na" te na.2 | "ghee ghee" "na na" ghee.2 "na na",
+             |ghee.2 "na na" te na.2 | "te	te"	"na	ke te	re"	"ke	te na	ke"	"te re ke te te re ke te"
+            
+#
+44v8|antara=|dha.2_-4 "- ghee_3" na "tre.-2 re.-2"| na "- ghee_6" na tun,
+            |dha.2_-4 "- ghee_3" "na na" "tre.-2 re.-2"| na "- ghee.2_5" na tun,
+            |dha.2_-4 "- ghee_3" na "tre.-2 re.-2"| "na na" "- ghee.2_5" na tun
+#
+44v8|last=  |dha.2_-4 "- ghee_3" "na na" "te re ke te"| "na na" "- ghee.2_6" "na ke" ge_-1,
+            |"ghee_-2 na" "- ghee_-2" "na -" "te re te re"| na "- ghee_5" na "tun tun",
+            |dha.2_-4 "- ghee_3" "na na" ge_-1| "na tun" "- ghee.2_6" "na ke" ge_-1,
+            |"ghee_-2 na" "- ghee_-2" "na -" "te re te re"| na "- ghee_5" na "te re te re"
+
+
+
