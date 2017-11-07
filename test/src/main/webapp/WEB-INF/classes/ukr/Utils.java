@@ -1577,36 +1577,26 @@ System.out.println(str);
 		//System.out.println("In getAllSoundbanks(): soundbank_file = "+soundbank_file);
 		String str = new File(soundbank_file).getName();
 		//System.out.println(str);
-	String name = str.substring(0,str.lastIndexOf("."));
-	//System.out.println(name);
-	  System.out.println("In Utils:getAllSoundbanks(): soundbank directory: "+new File(soundbank_file).getParentFile().getAbsolutePath());
-	  
-	  
-	  File dir = new File(soundbank_file).getParentFile();
-      File[] paths = dir.listFiles(new java.io.FilenameFilter() {
-		public boolean accept(File dir, String str) {
-			//System.out.println("lowercase = "+str.toLowerCase());
-			return str.toLowerCase().contains(name.toLowerCase());
-		}
-	  });
-	  
-	  System.out.println("No of. soundbanks found: "+paths.length);
+		String name = str.substring(0,str.lastIndexOf("."));
+		//System.out.println(name);
+		System.out.println("In Utils:getAllSoundbanks(): soundbank directory: "+new File(soundbank_file).getParentFile().getAbsolutePath());
+		
+		
+		File dir = new File(soundbank_file).getParentFile();
+		File[] paths = dir.listFiles(new java.io.FilenameFilter() {
+			public boolean accept(File dir, String str) {
+				//System.out.println("lowercase = "+str.toLowerCase());
+				return str.toLowerCase().contains(name.toLowerCase());
+			}
+		});
+		
+		System.out.println("No of. soundbanks found: "+paths.length);
 		
 		Soundbank[] soundbanks = new Soundbank[paths.length];
-	 for(int in=0;in<paths.length;in++)  {
-		 System.out.println(paths[in].getAbsolutePath()+" "+paths[in].length());
-		 soundbanks[in] = MidiSystem.getSoundbank(paths[in]);
-	
-/*
-         javax.sound.midi.Instrument[] instruments = soundbanks[in].getInstruments();
-		 System.out.println("no of instruments found: "+instruments.length);
-		 for(int i=0;i<instruments.length;i++) {
-			javax.sound.midi.Patch p = instruments[i].getPatch();
-			System.out.println(p.getBank()+" "+p.getProgram());
-		 }
-		 */
-	
-	 }
+		for(int in=0;in<paths.length;in++)  {
+			System.out.println(paths[in].getAbsolutePath()+" "+paths[in].length());
+			soundbanks[in] = MidiSystem.getSoundbank(paths[in]);
+		}
 		return soundbanks;
 	}
 }

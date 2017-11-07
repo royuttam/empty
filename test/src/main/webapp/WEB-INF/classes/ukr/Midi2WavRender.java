@@ -1,5 +1,5 @@
 package ukr;
- 
+
 import java.io.File;
 
 import java.io.FileNotFoundException;
@@ -22,68 +22,41 @@ import javax.sound.sampled.AudioSystem;
 
 import com.sun.media.sound.AudioSynthesizer;
 
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.FloatControl;
-
 public class Midi2WavRender {
 
 	public static void main(String[] args) {
 		if (args.length >= 2)
-			try {
-				File midi_file = new File(args[0]);
-				if (!midi_file.exists())
-					throw new FileNotFoundException();
-				Sequence sequence = MidiSystem.getSequence(midi_file);
-				Soundbank soundbank = null;
-				if (args.length >= 3) {
-					File soundbank_file = new File(args[2]);
-					if (soundbank_file.exists())
-						soundbank = MidiSystem.getSoundbank(soundbank_file);
-				}				
-							
-				render(new Soundbank[] {soundbank}, sequence, new File(args[1]));
-				System.exit(0);
+		try {
+			File midi_file = new File(args[0]);
+			if (!midi_file.exists())
+			throw new FileNotFoundException();
+			Sequence sequence = MidiSystem.getSequence(midi_file);
+			Soundbank soundbank = null;
+			if (args.length >= 3) {
+				File soundbank_file = new File(args[2]);
+				if (soundbank_file.exists())
+				soundbank = MidiSystem.getSoundbank(soundbank_file);
+			}				
+			
+			render(new Soundbank[] {soundbank}, sequence, new File(args[1]));
+			System.exit(0);
 
-			} catch (Exception e) {
-				System.out.println(e.toString());
-				System.out.println();
-			}
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			System.out.println();
+		}
 		System.out.println("MIDI to WAVE Render: usages:");
 		System.out.println("java Midi2WavRender <midi_file_in> <wave_file_out> <soundbank_file>");
 		System.exit(1);
 	}
 	
-	public static void render(String soundbank_file, String midi_file,	String wavfile) throws Exception{		
-	/*
-	String str = new File(soundbank_file).getName();
-	String name = str.substring(0,str.lastIndexOf("."));
-	System.out.println(name);
-	  System.out.println(new File(soundbank_file).getParentFile().getAbsolutePath());
-	  
-	  
-	  File dir = new File(soundbank_file).getParentFile();
-      File[] paths = dir.listFiles(new java.io.FilenameFilter() {
-		public boolean accept(File dir, String str) {
-			System.out.println("lowercase = "+str.toLowerCase());
-			return str.toLowerCase().contains(name.toLowerCase());
-		}
-	  });
-	  
-	  System.out.println("No of. soundbanks found: "+paths.length);
-	 
-	 Soundbank[] soundbanks = new Soundbank[paths.length];
-	 for(int in=0;in<paths.length;in++)  {
-		 System.out.println(paths[in].getAbsolutePath()+" "+paths[in].length());
-		 soundbanks[in] = MidiSystem.getSoundbank(paths[in]);
-	 }
-
-*/ 
-	 Sequence sequence = MidiSystem.getSequence(new File(midi_file));
-	 File audio_file = new File(wavfile);
-	 //render(soundbanks, sequence, audio_file);
-	 //System.out.println("In render(): soundbank_file="+soundbank_file);
-	 render(ukr.Utils.getAllSoundbanks(soundbank_file), sequence, audio_file);
-	 
+	public static void render(String soundbank_file, String midi_file,	String wavfile) throws Exception{				 
+		Sequence sequence = MidiSystem.getSequence(new File(midi_file));
+		File audio_file = new File(wavfile);
+		//render(soundbanks, sequence, audio_file);
+		//System.out.println("In render(): soundbank_file="+soundbank_file);
+		render(ukr.Utils.getAllSoundbanks(soundbank_file), sequence, audio_file);
+		
 	}
 	/*
 	public static void render(String soundbank_file, String midi_file,	String wavfile) throws Exception{		
@@ -98,8 +71,8 @@ public class Midi2WavRender {
 	}
 */
 	/*
-	 * Render sequence using selected or default soundbank into wave audio file.
-	 */
+	* Render sequence using selected or default soundbank into wave audio file.
+	*/
 	public static void render(Soundbank[] soundbanks, Sequence sequence,	File audio_file) {		
 		try {
 			// Find available AudioSynthesizer.
@@ -116,14 +89,14 @@ public class Midi2WavRender {
 			if (soundbanks != null) {
 				Soundbank defsbk = synth.getDefaultSoundbank();
 				if (defsbk != null)
-					synth.unloadAllInstruments(defsbk);
+				synth.unloadAllInstruments(defsbk);
 				//synth.loadAllInstruments(soundbank);
 				
 				
 				for(int i=0;i<soundbanks.length;i++) {
 					System.out.print("Loading Instruments from soundbank "+soundbanks[i].getName()+"...");
 					synth.loadAllInstruments(soundbanks[i]);				
-				    System.out.println("Done.");
+					System.out.println("Done.");
 				}
 			}
 			
@@ -145,21 +118,21 @@ public class Midi2WavRender {
 	}
 
 	/*
-	 * Find available AudioSynthesizer.
-	 */
+	* Find available AudioSynthesizer.
+	*/
 	public static AudioSynthesizer findAudioSynthesizer()
-			throws MidiUnavailableException {
+	throws MidiUnavailableException {
 		// First check if default synthesizer is AudioSynthesizer.
 		Synthesizer synth = MidiSystem.getSynthesizer();
 		if (synth instanceof AudioSynthesizer)
-			return (AudioSynthesizer) synth;
+		return (AudioSynthesizer) synth;
 
 		// If default synhtesizer is not AudioSynthesizer, check others.
 		Info[] infos = MidiSystem.getMidiDeviceInfo();
 		for (int i = 0; i < infos.length; i++) {
 			MidiDevice dev = MidiSystem.getMidiDevice(infos[i]);
 			if (dev instanceof AudioSynthesizer)
-				return (AudioSynthesizer) dev;
+			return (AudioSynthesizer) dev;
 		}
 
 		// No AudioSynthesizer was found, return null.
@@ -167,8 +140,8 @@ public class Midi2WavRender {
 	}
 
 	/*
-	 * Send entiry MIDI Sequence into Receiver using timestamps.
-	 */
+	* Send entiry MIDI Sequence into Receiver using timestamps.
+	*/
 	public static double send(Sequence seq, Receiver recv) {
 		float divtype = seq.getDivisionType();
 		assert (seq.getDivisionType() == Sequence.PPQ);
@@ -194,25 +167,25 @@ public class Midi2WavRender {
 				}
 			}
 			if (seltrack == -1)
-				break;
+			break;
 			trackspos[seltrack]++;
 			long tick = selevent.getTick();
 			if (divtype == Sequence.PPQ)
-				curtime += ((tick - lasttick) * mpq) / seqres;
+			curtime += ((tick - lasttick) * mpq) / seqres;
 			else
-				curtime = (long) ((tick * 1000000.0 * divtype) / seqres);
+			curtime = (long) ((tick * 1000000.0 * divtype) / seqres);
 			lasttick = tick;
 			MidiMessage msg = selevent.getMessage();
 			if (msg instanceof MetaMessage) {
 				if (divtype == Sequence.PPQ)
-					if (((MetaMessage) msg).getType() == 0x51) {
-						byte[] data = ((MetaMessage) msg).getData();
-						mpq = ((data[0] & 0xff) << 16)
-								| ((data[1] & 0xff) << 8) | (data[2] & 0xff);
-					}
+				if (((MetaMessage) msg).getType() == 0x51) {
+					byte[] data = ((MetaMessage) msg).getData();
+					mpq = ((data[0] & 0xff) << 16)
+					| ((data[1] & 0xff) << 8) | (data[2] & 0xff);
+				}
 			} else {
 				if (recv != null)
-					recv.send(msg, curtime);
+				recv.send(msg, curtime);
 			}
 		}
 		return curtime / 1000000.0;

@@ -144,17 +144,18 @@ $(document).ready(function(){
 		*/
 		
 		$.ajax({
-    type    : "POST",
-    url     : 'process.jsp',
-    data    : $("#mainform").serialize(),
-	timeout : 0,
-    success : function(data, status) {		
-				$( "#file" ).html(type+' file is now ready, click'+data+' to listen');
-				$( "#loading" ).hide();          }	,
-    complete: function() {
+			type    : "POST",
+			url     : 'process.jsp',
+			data    : $("#mainform").serialize(),
+			timeout : 0,
+			success : function(data, status) {		
+						$( "#file" ).html(type+' file is now ready, click'+data+' to listen');
+						$( "#loading" ).hide();          
+						},
+			complete: function() {
     
-	}
-});
+						}
+		});
 		
 
 		
@@ -250,7 +251,7 @@ body { background: #fef; }
 <form method="post" action="index.jsp">
 <table align="center">
 <tr>
-<td><a href="http://www-uroy.rhcloud.com">Home</a>| Download  <a href='Swarabitan.ttf'>Swaralipi Font</a> </td>
+<td><a href="http://uroy.tk">Home</a>| Download  <a href='Swarabitan.ttf'>Swaralipi Font</a> <a href='SoundFonts/ukr.SF2'>SoundFont</a></td>
 <td>user: <input type="text" name="user" size="5"></td>
 <td>Password: <input type="password" name="passwd" size="5"></td>
 <td><input type="submit" value="Log in"></td>
