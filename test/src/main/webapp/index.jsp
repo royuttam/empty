@@ -9,17 +9,32 @@
 <script src="jsfunc.js"></script>
 
 <script language="JavaScript">
+currentInst = 'tabla';
+function editTaal() {
+	if($("#group3").is(':visible')) 
+		$.post('editTaal.jsp', $("#mainform").serialize(),   function(data, status){
+			$("#transcript3").html(data);
+		});
+		updateAvailableTaal();
+}
+
 function updateAvailableTaal() {
 	param='taal='+$("#taal").val()+'&inst='+$("#inst").val();
+	$( "#taalloading" ).show();
 	$.post('getAvailableTaals.jsp?'+param, '',   function(data, status){
-		result=data.split('#');
+		result=data.split('##');
 		$("#taals").html(result[0]);
 		$("#alltaals").html(result[1]);
+		$( "#taalloading" ).hide();
 	});
+	
+	/*
         if($("#group3").is(':visible')) 
   	       $.post('editTaal.jsp', $("#mainform").serialize(),   function(data, status){
 			$("#transcript3").html(data);
+		
 		});
+		*/
 }
 function updateTranscript(){
 	$.post('transcript.jsp', $("#mainform").serialize(),   function(data, status){
@@ -46,17 +61,48 @@ function updateTranscript1(){
 	}        
 }
 function updateTaal() {
+	$( "#foundloading" ).show();
 	$.post('getTaal.jsp', $("#mainform").serialize(),   function(data, status){
-		$("#taal").val(data);
-		updateAvailableTaal();
+//		$("#taal").val(data);
+		
+		
+		result=data.split('##');
+
+		$("#taal").val(result[0]);
+		$("#taals").html(result[1]);
+		$("#alltaals").html(result[2]);
+	
+		
+		$("#transcript").html(result[3]);
+		$( "#file" ).html('');
+		
+		//updateAvailableTaal();
+		$( "#foundloading" ).hide();
 	});
 }
 function updatedir() {
-	var url='getSongs.jsp?dir=' + $("#dir").val();
-	$.post(url, null,   function(data, status){
-		$("#song").html(data);
-		updateTaal();
-		updateTranscript();
+	//var url='getSongs.jsp?dir=' + $("#dir").val();
+	var url='getSongs.jsp';
+	$( "#songloading" ).show();
+	$.post(url, $("#mainform").serialize(),   function(data, status){		
+	    result=data.split('##');
+		//$("#song").html(data);
+		$("#song").html(result[0]);
+		
+		
+		$("#taal").val(result[1]);
+		$("#taals").html(result[2]);
+		$("#alltaals").html(result[3]);
+	
+		
+		$("#transcript").html(result[4]);
+		$( "#file" ).html('');
+		
+		
+		//updateTaal();
+		
+		//updateTranscript();
+		$( "#songloading" ).hide();
 	});
 }
 function updateSoundFont() {
@@ -76,8 +122,6 @@ function save() {
 	});
 }
 function uploadTaal() {
-	//alert($('#transcript3').text());
-
 	$('#my-textarea').val(        $('#transcript3').text()     );
 	$.post('saveTaal.jsp', $("#mainform").serialize(),   function(data, status){
 		alert(data);
@@ -101,39 +145,25 @@ function upload() {
 	$.post('upload.jsp', $("#mainform").serialize(),   function(data, status){   alert(data);});
 }
 function reset() {
-	//alert('reset');
-	//updatedir();
-	//updateSoundFont();
-	//updateTranscript();
 	$("#scale").val(5);
 	$("#inst").val('tabla');
-	//updateAvailableTaal();
 	$("#soundfont").val('ukr.SF2');
 	$("#preset1").val(3);
 	$("#preset2").val(89);
 	$("#bpm").val(180);
 	$("#bpmval").val('180');
 }
-function process(type) {
-	$( "#file" ).html('Generating '+type+' file...');
-	$( "#loading" ).show();
-	$.post('process.jsp?flag='+type, $("#mainform").serialize(),   function(data, status){
-		$( "#file" ).html(type+' file is now ready, click'+data+' to listen');
-		$( "#loading" ).hide();
-	});    
-}
 
 $(document).ready(function(){
 	$("#dir").change(function(){ updatedir(); });
-	$("#song").change(function(){ updateTaal();  updateTranscript();});
-	$( "#mp3" ).click(function( event ) {  process('mp3');  });
-	$( "#midi" ).click(function( event ) {  process('midi');  });
-	$( "#wav" ).click(function( event ) {  process('wav');  });
+	$("#song").change(function(){ 
+	   //updateTaal();  updateTranscript();
+	   updateTaal();
+	
+	});
 
 	$( "#create" ).click(function( event ) {  
 		type=$("#flag").val();
-		//alert($("#flag").val());
-
 		$( "#file" ).html('Generating '+type+' file...');
 		$( "#loading" ).show();
 		/*
@@ -155,10 +185,7 @@ $(document).ready(function(){
 			complete: function() {
     
 						}
-		});
-		
-
-		
+		});		
 
 	});
 	
@@ -167,7 +194,6 @@ $(document).ready(function(){
 	});
 	$( "#test" ).click(function( event ) {
 		$.post('test.jsp', $("#mainform").serialize(),   function(data, status){    });
-                //$.post('process.jsp?flag=playInst', $("#mainform").serialize(),   function(data, status){      });
 	});
 
 	$( "#edittrans" ).click(function( event ) {
@@ -184,20 +210,31 @@ $(document).ready(function(){
 			$(this).val(function () { return $content.is(":visible") ? "+" : "-";});
 			$("#group").slideToggle(0,null);
 		});
-		// $("#transcript3").html("fsdfsdfsdgdsgsdg----");
+		
+		/*
 		$.post('editTaal.jsp', $("#mainform").serialize(),   function(data, status){
-			//alert(data);
-			//$( "#file" ).html(type+' file is now ready, click'+data+' to listen');
-			//$( "#loading" ).hide();
 			$("#transcript3").html(data);
 		});
-
-
+		*/
+		
+		if($("#transcript3").html() == "") 
+			editTaal();
+		else 
+			if(currentInst != $("#inst").val()) {
+				editTaal();
+				currentInst = $("#inst").val();
+			}
 
 	});
 
-	$("#taal").change(function(){      updateAvailableTaal();          });
-	$("#inst").change(function(){      updateAvailableTaal();          });
+	$("#taal").change(function(){      
+		updateAvailableTaal();          
+		//updateTaal();
+	});
+	$("#inst").change(function(){      
+		//updateAvailableTaal();          
+		editTaal();
+		});
 	$("#soundfont").change(function(){ updateSoundFont();              });
 	$("#bpm").mousemove(function(){   $("#bpmval").val($(this).val()); });    
 	$("#bpm").change(function(){      $("#bpmval").val($(this).val()); });
@@ -207,31 +244,8 @@ $(document).ready(function(){
 	
 	$("#download").mousedown(function(){   
 	  url='transcript.jsp?dir='+$("#dir").val()+'&song='+$("#song").val();
-	  //alert();
 	  $(this).attr('href',url);    
 	});    
-	
-	/*
-	$(document).on("click", "#transcript table tr", function(e) {
-		//alert($(this).text());
-		$(this).addClass('selected').siblings().removeClass('selected');       
-		var value=$(this).html();
-		//alert(value);
-	});
-	*/  
-	/*
-	$("#table1 tr").click(function(){
-		//alert('a');
-$(this).addClass('selected').siblings().removeClass('selected');    
-var value=$(this).find('td:first').html();
-alert(value);    
-});
-
-$('.ok').on('click', function(e){
-	alert($("#table tr.selected td:first").html());
-});
-*/
-
 	updatedir();
 	reset();
 	$("#transcript2").html($("#skeleton").html());
@@ -266,11 +280,11 @@ response.setHeader("Pragma", "no-cache");
 response.setHeader("Cache-Control", "no-cache");
 response.setDateHeader("Expires", -1);
 
-String display="", ed="enabled";
+String display="", ro="";
 String user= request.getParameter("user");
 String passwd= request.getParameter("passwd");
 if(user != null && passwd != null && user.equals("root") && passwd.equals("ufibtum"));
-else {display="none"; ed="disabled";}
+else {display="none"; ro="disabled";}
 
 
 String root = request.getServletContext().getRealPath("/")+"/";
@@ -320,12 +334,16 @@ for(String key : dirs.keySet())												//for linux
 
 %>
 </select>	
-</td><td>Song:</td>
+</td><td>Song:<img width="20" id="songloading" src="loading.gif" style="display:none;float:right"/></td>
 <td><select id='song' name='song' ></select></td>
 <td>SoundFont:</td><td><select id="soundfont" name='soundfont' style="width: 160px" >
+<jsp:include page='getSoundFonts.jsp'/>
+
+<!--
 <option value='ukr.SF2'>ukr.SF2</option>
 <option value='Musyng_KiteExt.sf2'>Musyng_KiteExt.sf2</option>
 <option value='FluidR3_GMExt.SF2'>FluidR3_GMExt.SF2</option>
+-->
 </select>
 </td></tr><tr><td> Scale:</td>
 <td><select id="scale" name="scale">
@@ -342,7 +360,7 @@ out.println("<option value='"+i+"'>"+scales[i]+"</option>");
 <jsp:param name="soundfont" value="ukr.sf2"/>
 </jsp:include>
 </select>
-</td></tr><tr><td>Found:</td>
+</td></tr><tr><td>Found:<img width="20" id="foundloading" src="loading.gif" style="display:none;float:right"/></td>
 <td><input type='text' id='taal' name='taal' size='1'/></td><td>Inst:</td>
 <td><select id="inst" name="inst">
 <option value='tabla'>Tabla</option>
@@ -360,17 +378,13 @@ Tabla off<input type="checkbox" name="tablaonoff" />
 </td></tr></table>
 
 <table border='0' align="center"><tr height="40">
-<td style="display:<%=display%>;">All Taals: <select id="alltaals" name="alltaals"></select></td>
+<td style="display:<%=display%>;">All Taals: <img width="20" id="taalloading" src="loading.gif" style="display:none;float:left"/><select id="alltaals" name="alltaals"></select></td>
 <td><input type="button" id="test" name='test' value="Test" style="display:<%=display%>;"/></td>
 <td><input type="button" id="reset" name='reset' value="Reset"/></td>   
 <td><input type="button" id="edittrans" value="Edit" style="display:<%=display%>;"/></td>
 <td><input type="button" id="edittrans1" value="EditTaal" style="display:<%=display%>;"/></td>
 <td><input type="button" id="play" name='play' value="Play" style="display:<%=display%>;"/></td>
-<!--
-<td><input type="button" id="mp3" name='mp3' value="MP3"/></td>
-<td><input type="button" id="midi" name='midi' value="MIDI"/></td>
-<td><input type="button" id="wav" name='wav' value="WAV"/></td>
--->
+
 <td><input type="button" id="create" name='create' value="Create"/>
 <select id="flag" name='flag' style="width: 60px">
 <option value='mp3'>mp3</option>

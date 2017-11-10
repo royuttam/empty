@@ -15,5 +15,17 @@ String path = dir+"/"+java.net.URLDecoder.decode(request.getParameter("song"), "
 Object[] res = ukr.Utils.searchTaal(path);
 out.println(res[1]);
 
+out.println("##");
+String taal = res[1].toString();
+String inst = request.getParameter("inst");
 %>
 
+<jsp:include page="<%=\"getAvailableTaals.jsp?taal=\"+taal+\"&inst=\"+inst%>"/>
+
+<%
+out.println("##");
+String d = request.getParameter("dir");
+String song = request.getParameter("song");
+%>
+
+<jsp:include page="<%=\"transcript.jsp?dir=\"+d+\"&song=\"+song%>"/>

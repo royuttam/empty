@@ -213,7 +213,6 @@ System.out.println(str);
 	}    
 	//---function "searchTaal------------
 	public static Object[] searchTaal(String path) throws Exception {
-		System.out.println("In searchTaal: path= "+path);
 		String[][] mat=readHtml(path);
 		return Utils.findTaal(mat);
 	}
@@ -753,7 +752,12 @@ System.out.println(str);
 		String tb=song.meta.taal.split("v")[0];		
 		double t=song.meta.pre;int k=0;
 		while (t+2 <= time) {
-			nmat=concatRow(nmat, new Double[][] {{t+1, 1.0, 10.0, 70.0, 70.0, 1.0}});
+			nmat=concatRow(nmat, new Double[][] {{t+1, 1.0, 10.0, 70.0, 70.0, 1.0}});		//70 chick
+			/*
+			nmat=concatRow(nmat, new Double[][] {{t, 1.0, 10.0, 36.0, 127.0, 1.0}});		//36 drum
+			nmat=concatRow(nmat, new Double[][] {{t+1, 1.0, 10.0, 81.0, 80.0, 1.0}});		//39 
+			nmat=concatRow(nmat, new Double[][] {{t+2, 1.0, 10.0, 70.0, 80.0, 1.0}});		//39 
+			*/
 			t=t+tb.charAt(k)-48;
 			k=(k+1)%tb.length();
 		}

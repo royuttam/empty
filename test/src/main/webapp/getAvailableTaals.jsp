@@ -17,7 +17,7 @@ while(st.hasMoreTokens()) {
     str=str+"<option value='"+tk+"'>"+tk+"</option>";
 }
 
-str=str+"#";
+str=str+"##";
 String[] tokens = (String[])values[0];
 for(int i=0;i<tokens.length;i++){    
     String tk=tokens[i];
