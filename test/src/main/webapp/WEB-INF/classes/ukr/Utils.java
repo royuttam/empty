@@ -1412,7 +1412,7 @@ System.out.println(str);
 		if (in == null || ("".equals(in))) return ""; // vacancy test.
 		for (int i = 0; i < len; i++) {
 			current = in.charAt(i);
-			if(current < 128) out.append(current);
+			if(current < 128 && current > 31) out.append(current);
 		}
 		return out.toString();
 	}
