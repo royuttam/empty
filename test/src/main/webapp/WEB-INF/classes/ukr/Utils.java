@@ -47,20 +47,20 @@ class Row_normalize {
 		this.bol = bol;this.td=td;this.ampl=ampl;this.scale=scale;
 	}
 }
-class Song {
-	class Meta {
+class Song implements Serializable {
+	class Meta implements Serializable{
 		public double pre = 0;
 		public int bpm, scale;
 		public String taal;
 		public int inst1, inst2;
 	}
-	class Segment {
+	class Segment implements Serializable {
 		String[] T = null;
 		String T1, name = "noName";
 		double duration;
 		public Segment(String[] T, String name) {this.T=T;this.name=name;}
 	}
-	class Data {
+	class Data implements Serializable {
 		public Segment segment;
 		public Data(Segment s) {this.segment=s;};
 	}
@@ -689,8 +689,7 @@ System.out.println(str);
 	static String song2midi(String fl,Song song,String instname,boolean off,boolean songonoff) throws Exception{
 		int arr[] = {song.meta.inst1, song.meta.inst2};
 		MidiInfo mi=t2midi(song, arr);
-		if (songonoff)
-		mi.nmat=null;		
+		if (songonoff) 	mi.nmat=null;		
 		if (!off) {			
 			MidiInfo info =addInst(song,instname);
 			//info.nmat=modify(mi.nmat, info.nmat);
@@ -746,7 +745,7 @@ System.out.println(str);
 			nmat = concatRow(nmat,v.nmat);
 			patch=concatRow(patch, new Integer[][] {{type+1, 1, inst[type], 1}});
 		}
-		System.out.println("in t2midi "+nmat.length);
+		System.out.println("in t2midi(): No. of notes: "+nmat.length);
 		patch=concatRow(patch,new Integer[][] {{3,1,50,1},{4,1,6,1}});
 		//------Add chick chick------------------------------
 		String tb=song.meta.taal.split("v")[0];		
@@ -1576,6 +1575,7 @@ System.out.println(str);
 		Utils.writemidi_java(nmat, "out.mid" ,300, bpm,3,4, inst.patch);
 		Utils.playMidi("out.mid", soundFontRoot+soundfont);
 	}
+	/*
 	//----------------------------------------------
 	public static Soundbank[] getAllSoundbanks(String soundbank_file) throws Exception {
 		//System.out.println("In getAllSoundbanks(): soundbank_file = "+soundbank_file);
@@ -1603,6 +1603,33 @@ System.out.println(str);
 		}
 		return soundbanks;
 	}
+	
+	//----------------------------------------------
+	public static Soundbank[] getAllSoundbanks1(String directory) throws Exception {
+		//String str = new File(soundbank_file).getName();
+		//String name = str.substring(0,str.lastIndexOf("."));
+		//System.out.println("In Utils:getAllSoundbanks(): soundbank directory: "+new File(soundbank_file).getParentFile().getAbsolutePath());
+		
+		
+		//File dir = new File(soundbank_file).getParentFile();
+		File dir = new File(directory);
+		File[] paths = dir.listFiles(new java.io.FilenameFilter() {
+			public boolean accept(File dir, String str) {
+				//return str.toLowerCase().contains(name.toLowerCase());
+				return str.toLowerCase().contains("sf2");
+			}
+		});
+		
+		System.out.println("No of. soundbanks found: "+paths.length);
+		
+		Soundbank[] soundbanks = new Soundbank[paths.length];
+		for(int in=0;in<paths.length;in++)  {
+			System.out.println(paths[in].getAbsolutePath()+" "+paths[in].length());
+			soundbanks[in] = MidiSystem.getSoundbank(paths[in]);
+		}
+		return soundbanks;
+	}
+	*/
 }
 
 
