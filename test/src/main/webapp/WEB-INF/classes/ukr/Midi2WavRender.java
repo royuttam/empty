@@ -55,7 +55,10 @@ public class Midi2WavRender {
 		File audio_file = new File(wavfile);
 		//render(soundbanks, sequence, audio_file);
 		//System.out.println("In render(): soundbank_file="+soundbank_file);
-		render(ukr.Utils.getAllSoundbanks(soundbank_file), sequence, audio_file);
+		
+		Soundbank[] soundbanks = {MidiSystem.getSoundbank(new File(soundbank_file))};
+		render(soundbanks, sequence, audio_file);
+		//render(ukr.Utils.getAllSoundbanks(soundbank_file), sequence, audio_file);
 		
 	}
 	/*

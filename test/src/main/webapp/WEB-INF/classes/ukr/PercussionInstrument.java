@@ -27,7 +27,7 @@ public abstract class PercussionInstrument {
     Map setTaal(String key) throws Exception {
         //System.out.println("\nIn setTaal: setting taal "+key);
         String[] taal=taaldb.get(key);
-		System.out.println(taal.length);
+		System.out.println("In setTaal(): taal length: "+taal.length);
         Object[] bayan={}, dayan={};
         String[] bs = {};
         for (int j=0;j<taal.length;j++) {
