@@ -365,7 +365,7 @@ out.println("<option value='"+i+"'>"+scales[i]+"</option>");
 <input type="range" id='bpm' name="bpm" min="1" max="1000" style='position: relative; top: 6px; color: blue;'/>song off<input type="checkbox" name="songonoff" />
 </td><td>Primary inst:</td><td><select id="preset1" name='preset1' style="width: 160px" >
 <jsp:include page='getPresets1.jsp'>
-<jsp:param name="soundfont" value="ukr.sf2"/>
+<jsp:param name="soundfont" value="ukr.SF2"/>
 </jsp:include>
 </select>
 </td></tr><tr><td>Found:<img width="20" id="foundloading" src="loading.gif" style="display:none;float:right"/></td>
@@ -380,7 +380,7 @@ Tabla off<input type="checkbox" name="tablaonoff" />
 
 </td><td>Secondary inst:</td><td><select id="preset2" name='preset2' style="width: 160px" >
 <jsp:include page='getPresets1.jsp'>
-<jsp:param name="soundfont" value="ukr.sf2"/>
+<jsp:param name="soundfont" value="ukr.SF2"/>
 </jsp:include>
 </select>
 </td></tr></table>
