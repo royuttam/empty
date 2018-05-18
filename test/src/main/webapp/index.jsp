@@ -108,7 +108,7 @@ function updatedir() {
 function updateSoundFont() {
 	v1=$("#preset1").val();
 	v2=$("#preset2").val();
-	$.post('getPresets.jsp?soundfont='+$("#soundfont").val(), '',   function(data, status){
+	$.post('getPresets1.jsp?soundfont='+$("#soundfont").val(), '',   function(data, status){
 		$("#preset1").html(data);
 		$("#preset1").val(v1);
 		$("#preset2").html(data);
@@ -178,12 +178,20 @@ $(document).ready(function(){
 			url     : 'process.jsp',
 			data    : $("#mainform").serialize(),
 			timeout : 0,
+			error: function(jqXHR, textStatus){
+				//if(textStatus === 'timeout') {     
+					//alert('Failed from timeout');         					
+					//do something. Try again perhaps?
+					$( "#file" ).html(textStatus+' error occurred. Please try again');
+						$( "#loading" ).hide(); 
+				//}
+			},
 			success : function(data, status) {		
 						$( "#file" ).html(type+' file is now ready, click'+data+' to listen');
 						$( "#loading" ).hide();          
 						},
-			complete: function() {
-    
+			complete: function(data, status) {
+						//alert(data);
 						}
 		});		
 
@@ -356,7 +364,7 @@ out.println("<option value='"+i+"'>"+scales[i]+"</option>");
 </td><td>Speed :</td><td><input type='text' id='bpmval' size='1'/> BPM
 <input type="range" id='bpm' name="bpm" min="1" max="1000" style='position: relative; top: 6px; color: blue;'/>song off<input type="checkbox" name="songonoff" />
 </td><td>Primary inst:</td><td><select id="preset1" name='preset1' style="width: 160px" >
-<jsp:include page='getPresets.jsp'>
+<jsp:include page='getPresets1.jsp'>
 <jsp:param name="soundfont" value="ukr.sf2"/>
 </jsp:include>
 </select>
@@ -371,7 +379,7 @@ Taal:<select id="taals" name="taals"></select>
 Tabla off<input type="checkbox" name="tablaonoff" />
 
 </td><td>Secondary inst:</td><td><select id="preset2" name='preset2' style="width: 160px" >
-<jsp:include page='getPresets.jsp'>
+<jsp:include page='getPresets1.jsp'>
 <jsp:param name="soundfont" value="ukr.sf2"/>
 </jsp:include>
 </select>
