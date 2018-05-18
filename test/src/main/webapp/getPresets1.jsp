@@ -19,5 +19,4 @@ Instrument[] instruments = soundbank.getInstruments();
 		out.println("<option value='"+(program+1)+"'>"+(program+1)+". "+instrument.getName()+"</option>");
 		
 	}
-	System.out.println("In getPresets1.jsp");
 %>
