@@ -38,6 +38,10 @@ String file = ukr.Utils.process(path,scale,inst,preset1,preset2,bpm,taal,soundfo
 //System.out.println("process.jsp called");
 }catch(Exception e) {out.println("<a href='"+e+"'>here</a>");}
 
+//System.out.print("Waiting...");
+//Thread.sleep(600000);
+//System.out.println("Completed");
+
 %>
 <%!
 

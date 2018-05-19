@@ -1,5 +1,5 @@
 <%@page pageEncoding="UTF-8" language="java" contentType="text/html; charset=UTF-8"%>
-<%@page import="java.io.*,java.util.*,org.apache.commons.lang3.*"%>
+<%@page import="java.io.File,java.util.Properties,java.util.Map"%>
 <%
 response.setHeader("Pragma", "no-cache");
 response.setHeader("Cache-Control", "no-cache");
@@ -35,7 +35,6 @@ out.println("##");
 String d = request.getParameter("dir");
 String inst = request.getParameter("inst");
 %>
-
 
 <jsp:include page="<%=\"getTaal.jsp?dir=\"+d+\"&song=\"+song+\"&inst=\"+inst%>"/>
 

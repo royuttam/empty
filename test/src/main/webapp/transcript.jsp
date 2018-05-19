@@ -1,5 +1,7 @@
-<%@page import="java.util.*,java.io.*,matlabcontrol.*,org.apache.commons.lang3.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@page import="java.util.Properties,java.util.Scanner"%>
+<%@page import="java.io.InputStreamReader,java.io.FileInputStream"%>
+
 <%
 response.setHeader("Pragma", "no-cache");
 response.setHeader("Cache-Control", "no-cache");

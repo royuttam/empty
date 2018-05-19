@@ -1,4 +1,4 @@
-<%@page import="java.util.*,java.io.*,matlabcontrol.*,org.apache.commons.lang3.*"%>
+<%@page import="java.util.Properties"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 
 <%
@@ -12,11 +12,12 @@ prop.load(getServletContext().getResourceAsStream("/conf/system.conf"));
 String dir = prop.getProperty("songRoot")+java.net.URLDecoder.decode(request.getParameter("dir"), "UTF-8");
 String path = dir+"/"+java.net.URLDecoder.decode(request.getParameter("song"), "UTF-8");
 
-Object[] res = ukr.Utils.searchTaal(path);
+String[] res = ukr.Utils.searchTaal(path);
 out.println(res[1]);
 
 out.println("##");
-String taal = res[1].toString();
+//String taal = res[1].toString();
+String taal = res[1];
 String inst = request.getParameter("inst");
 %>
 

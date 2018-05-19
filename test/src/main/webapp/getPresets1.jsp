@@ -1,4 +1,5 @@
-<%@page import="java.util.*,java.io.*,javax.sound.midi.*"%>
+<%@page import="java.util.Properties,java.io.File,javax.sound.midi.Instrument"%>
+<%@page import="javax.sound.midi.MidiSystem,javax.sound.midi.Soundbank"%>
 <%
 
 response.setHeader("Pragma", "no-cache");
