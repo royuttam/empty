@@ -211,13 +211,13 @@ System.out.println(str);
 		String[][] result = concat(first,second);
 		printMatrix(result);*/
 	}    
-	//---function "searchTaal------------
-	public static Object[] searchTaal(String path) throws Exception {
+	//---function searchTaal------------
+	public static String[] searchTaal(String path) throws Exception {
 		String[][] mat=readHtml(path);
 		return Utils.findTaal(mat);
 	}
 	//---function findTaal------------
-	static Object[] findTaal(String[][] mat) {        
+	static String[] findTaal(String[][] mat) {        
 		int row=mat.length;
 		String d="";int l=0;
 		String[] delims={"L","LL","ll","llll","llL","Lll","l[]l","ll[]ll","L[]L"};                        
@@ -240,7 +240,7 @@ System.out.println(str);
 					if(seg.get(in).equals("A"))
 					seg.set(in,"l");
 					List<Integer> f1=new ArrayList<Integer>();
-					for(int k=0;k<seg.size();k++) if(seg.get(k).equals("l")) {f1.add(k);/*System.out.println(k);*/}
+					for(int k=0;k<seg.size();k++) if(seg.get(k).equals("l")) {f1.add(k);}
 					String div="";
 					for(int j=0;j<f1.size()-1;j++)
 					div=div+(f1.get(j+1)-f1.get(j)-1);
@@ -252,6 +252,7 @@ System.out.println(str);
 		}
 		return new String[]{""+l,d};
 	}
+	
 	//---function "addInst------------
 	static MidiInfo addInst(Song song, String instName) throws Exception {		
 		double pre=song.meta.pre;
